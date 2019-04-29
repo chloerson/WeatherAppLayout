@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -32,6 +33,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button button;
+
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private FusedLocationProviderClient fusedLocationProviderClient;
     private LocationCallback locationCallback;
     private LocationRequest locationRequest;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,16 +95,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToMenu(View view){
-        Intent getMenuScreen = new Intent(this, MenuScreen.class);
+        Intent getMenuScreen = new Intent(this,MenuScreen.class);
         startActivity(getMenuScreen);
-
     }
 
-    public void goToSettings(View view){
-        Intent getSettings = new Intent(this, SettingsScreen.class);
-        startActivity(getSettings);
-
-    }
 
     private void buildLocationCallBack() {
         locationCallback = new LocationCallback(){

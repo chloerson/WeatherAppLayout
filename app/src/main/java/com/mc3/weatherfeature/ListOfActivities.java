@@ -18,4 +18,10 @@ public class ListOfActivities extends AppCompatActivity {
         startActivity(backButton2);
 
     }
+
+    public void goToSettings(View view){
+        Intent getSettings = new Intent(this, SettingsScreen.class);
+        startActivity(getSettings);
+
+    }
 }
